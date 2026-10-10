@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="theme-color" content="#f3c3c9" />
+<title>纯子的梦境照片墙</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='29' fill='%23f7d9d4'/%3E%3Cpath d='M17 38c8-13 22-13 30 0' fill='none' stroke='%23a96b62' stroke-width='4' stroke-linecap='round'/%3E%3Ccircle cx='24' cy='28' r='3' fill='%23a96b62'/%3E%3Ccircle cx='40' cy='28' r='3' fill='%23a96b62'/%3E%3C/svg%3E" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div class="grain"></div>
+<main>
+  <section class="hero" aria-labelledby="title">
+    <div class="hero-copy">
+      <p class="eyebrow">A LITTLE WORLD OF YOU</p>
+      <h1 id="title">纯子的梦境<br><em>照片墙</em></h1>
+      <p class="intro">把这份礼物放在心里，<br>再打开一扇小小的窗。</p>
+      <button class="open-button" id="openWall"><span>打开梦境照片墙</span><i>↗</i></button>
+    </div>
+    <div class="hero-window" id="heroWindow">
+      <div class="window-glow"></div>
+      <img src="assets/hero.png" alt="纯子抱着猫坐在窗边的梦境插画" />
+      <div class="window-caption">愿你每次想起，都刚好遇见温柔。</div>
+    </div>
+  </section>
+
+  <section class="wall" id="wall" aria-labelledby="wallTitle">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">DREAM ARCHIVE / 01—04</p>
+        <h2 id="wallTitle">四个小小的瞬间</h2>
+      </div>
+      <div class="progress-wrap" aria-live="polite"><span id="progressText">已解锁 0 / 4</span><div class="progress"><span id="progressBar"></span></div></div>
+    </div>
+    <p class="scan-note" id="scanNote">封面二维码会打开这里；请扫描每张小卡上的专属二维码，逐一解锁对应的瞬间。</p>
+    <div class="photo-grid">
+      <button class="photo-card theme-sleepy locked" data-id="sleepy" aria-label="扫描小卡二维码解锁抱猫晚安照片">
+        <span class="card-image"><img src="assets/sleepy.png" alt="抱猫晚安" /></span><span class="tape"></span><span class="card-label">01 · 抱猫晚安</span><span class="card-hint">点开一盏小夜灯</span>
+      </button>
+      <button class="photo-card theme-heart locked" data-id="heart" aria-label="扫描小卡二维码解锁爱心应援照片">
+        <span class="card-image"><img src="assets/heart.png" alt="爱心应援" /></span><span class="tape"></span><span class="card-label">02 · 爱心应援</span><span class="card-hint">点开一颗小心心</span>
+      </button>
+      <button class="photo-card theme-castle locked" data-id="castle" aria-label="扫描小卡二维码解锁城堡旅行照片">
+        <span class="card-image"><img src="assets/castle.png" alt="城堡旅行" /></span><span class="tape"></span><span class="card-label">03 · 城堡旅行</span><span class="card-hint">点开一张车票</span>
+      </button>
+      <button class="photo-card theme-mystery locked" data-id="mystery" aria-label="扫描小卡二维码解锁神秘礼物照片">
+        <span class="card-image mystery-art"><span class="moon">☾</span><span class="gift">?</span><span class="spark">✦</span></span><span class="tape"></span><span class="card-label">04 · 神秘礼物</span><span class="card-hint">点开一份未知的温柔</span>
+      </button>
+    </div>
+  </section>
+
+  <section class="letter" id="letter" aria-live="polite">
+    <div class="letter-seal">✦</div>
+    <p class="eyebrow">A NOTE FOR YOU</p>
+    <h2>给正在读这封信的你</h2>
+    <p class="letter-text">愿你被温柔的事物围绕，<br>也愿你一直保留，<br>为小小惊喜心动的能力。</p>
+    <p class="signature">— 纯子</p>
+    <button class="reset" id="reset">重新看一遍</button>
+  </section>
+</main>
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
+  <div class="modal-backdrop" data-close></div><div class="modal-panel"><button class="close" data-close aria-label="关闭">×</button><div class="modal-art" id="modalArt"></div><p class="modal-kicker" id="modalKicker"></p><h2 id="modalTitle"></h2><p id="modalCopy"></p><button class="modal-next" data-close>收下这份心意</button></div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
